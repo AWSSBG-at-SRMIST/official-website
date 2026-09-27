@@ -9,7 +9,9 @@ type Props = { node: any };
 // Fixed locale, not `undefined` — `undefined` resolves to the runtime's own
 // locale, which differs between the Node server (SSR) and the browser
 // (client), producing two different date strings for the same render and
-// triggering a hydration mismatch.
+// triggering a hydration mismatch. The time zone is fixed for the same
+// reason: without it the server (UTC on Vercel) printed a 9:00 PM IST event
+// as 03:30 PM. Events are held in India, so show IST for everyone.
 function formatDate(iso?: string) {
   if (!iso) return "TBD";
   try {
@@ -19,7 +21,8 @@ function formatDate(iso?: string) {
       day: "numeric",
       hour: "2-digit",
       minute: "2-digit",
-    });
+      timeZone: "Asia/Kolkata",
+    }) + " IST";
   } catch {
     return iso;
   }

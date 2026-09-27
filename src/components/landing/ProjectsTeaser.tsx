@@ -20,7 +20,7 @@ export function ProjectsTeaser() {
           </h2>
           <p className="text-label-md text-on-surface-variant max-w-md">
             A growing gallery of products, open-source tools, and experiments built by
-            our community &mdash; launching soon.
+            our community.
           </p>
         </div>
         <div className="lg:col-span-4 flex lg:justify-end">

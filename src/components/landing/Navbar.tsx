@@ -42,7 +42,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b-2 border-on-surface/10">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-2 grid grid-cols-[auto_1fr_auto] md:grid-cols-3 items-center">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-2 grid grid-cols-[auto_1fr_auto] lg:grid-cols-3 items-center">
         <Link
           className="font-headline-md text-sm font-bold text-on-surface transition-all duration-300 hover:opacity-80 flex justify-start items-center gap-2"
           href="/"
@@ -51,7 +51,7 @@ export function Navbar() {
           <span className="hidden md:block tracking-wide">AWS SBG at SRMIST</span>
         </Link>
 
-        <div className="hidden md:flex items-center justify-center gap-6 font-label-md text-xs uppercase tracking-wide">
+        <div className="hidden lg:flex items-center justify-center gap-6 font-label-md text-xs uppercase tracking-wide">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -69,14 +69,14 @@ export function Navbar() {
             href={RECRUITMENTS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-block text-xs uppercase tracking-wide font-bold px-4 py-2 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300"
+            className="hidden lg:inline-block text-xs uppercase tracking-wide font-bold px-4 py-2 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300"
           >
             Recruitments
           </a>
           <button
             aria-label="Toggle menu"
             onClick={() => setIsOpen((v) => !v)}
-            className="md:hidden text-on-surface p-2.5"
+            className="lg:hidden text-on-surface p-2.5"
           >
             {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -90,7 +90,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden border-t-2 border-on-surface/10 bg-surface/95 backdrop-blur-md"
+            className="lg:hidden border-t-2 border-on-surface/10 bg-surface/95 backdrop-blur-md"
           >
             <div className="flex flex-col px-margin-mobile py-2 gap-0 font-label-md text-sm uppercase tracking-wide">
               {navLinks.map((link) => (

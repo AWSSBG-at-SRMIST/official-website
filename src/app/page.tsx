@@ -22,7 +22,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <main className="pt-24 min-h-screen">
+      {/* overflow-x-clip: on desktop the hero globe is shifted right and
+          extends past the viewport edge, which made the whole page scroll
+          sideways. Clip (not hidden) so no scroll container is created. */}
+      <main className="pt-24 min-h-screen overflow-x-clip">
         <Hero />
         <CommunityMarquee />
         <AboutSection />
