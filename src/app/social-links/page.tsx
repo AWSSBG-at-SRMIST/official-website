@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { SiMeetup, SiInstagram, SiGithub, SiWhatsapp } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa6";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/social-links",
   title: "Social Links",
-  description: "All official social media links for AWS Student Builder Group at SRMIST.",
-};
+  description:
+    "All official social media links for AWS Student Builder Group at SRMIST.",
+});
 
 const socials = [
   {

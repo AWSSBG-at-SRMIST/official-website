@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata, siteUrl } from "@/lib/seo";
 import { Footer } from "@/components/landing/Footer";
 import { TeamPageClient } from "@/components/team/TeamPageClient";
 import { getTeamMembers } from "@/lib/team-data";
@@ -6,20 +7,19 @@ import { getHonoraryMembers } from "@/lib/honorary-members";
 import { buildTeamTree } from "@/lib/team-tree";
 import { getTeamPhotoMap } from "@/lib/team-photos";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/team",
   title: "Team",
   description:
     "Meet the student builders, leads, and mentors behind AWS Student Builder Group at SRMIST — the student tech community at SRM Kattankulathur, Tamil Nadu.",
-  alternates: { canonical: "https://awssbg-srmist.in/team" },
-  openGraph: { url: "https://awssbg-srmist.in/team" },
-};
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://awssbg-srmist.in" },
-    { "@type": "ListItem", position: 2, name: "Team", item: "https://awssbg-srmist.in/team" },
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl("/") },
+    { "@type": "ListItem", position: 2, name: "Team", item: siteUrl("/team") },
   ],
 };
 

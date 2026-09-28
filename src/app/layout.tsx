@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE, SITE_URL } from "@/lib/seo";
 import { Space_Grotesk, Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { BackgroundNetwork } from "@/components/layout/BackgroundNetwork";
@@ -20,10 +21,9 @@ const geist = Geist({
   display: "swap",
 });
 
-const BASE_URL = "https://awssbg-srmist.in";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "AWS Student Builder Group at SRMIST",
     template: "%s | AWS SBG at SRMIST",
@@ -44,32 +44,25 @@ export const metadata: Metadata = {
     "AI community SRMIST",
     "data engineering club SRMIST",
   ],
-  authors: [{ name: "AWS Student Builder Group at SRMIST", url: BASE_URL }],
+  authors: [{ name: "AWS Student Builder Group at SRMIST", url: SITE_URL }],
   creator: "AWS Student Builder Group at SRMIST",
   publisher: "AWS Student Builder Group at SRMIST",
   openGraph: {
     siteName: "AWS Student Builder Group at SRMIST",
     type: "website",
     locale: "en_IN",
-    url: BASE_URL,
+    url: SITE_URL,
     title: "AWS Student Builder Group at SRMIST",
     description:
       "Official student tech community at SRMIST, SRM KTR — building on AWS, AI, data engineering, and modern software. Join India's top student builder community.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "AWS Student Builder Group at SRMIST — Student Tech Community",
-      },
-    ],
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "AWS Student Builder Group at SRMIST",
     description:
       "Official student tech community at SRMIST, SRM KTR — building on AWS, AI, data engineering, and modern software. Join India's top student builder community.",
-    images: ["/og-image.png"],
+    images: [OG_IMAGE.url],
   },
   robots: {
     index: true,
@@ -90,8 +83,8 @@ const organizationSchema = {
   "@type": "Organization",
   name: "AWS Student Builder Group at SRMIST",
   alternateName: ["AWS SBG SRMIST", "AWSSBG SRMIST", "AWS SBG at SRM"],
-  url: BASE_URL,
-  logo: `${BASE_URL}/logo.png`,
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
   description:
     "AWS Student Builder Group at SRMIST is the official student tech community at SRM Institute of Science and Technology, Kattankulathur, Tamil Nadu. Focused on AWS products, AI, data engineering, cloud infrastructure, and modern software development.",
   foundingDate: "2025",
@@ -135,13 +128,13 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "AWS Student Builder Group at SRMIST",
-  url: BASE_URL,
+  url: SITE_URL,
   description:
     "Official website of AWS Student Builder Group at SRMIST — student tech community at SRM KTR, Kattankulathur, Tamil Nadu.",
   publisher: {
     "@type": "Organization",
     name: "AWS Student Builder Group at SRMIST",
-    url: BASE_URL,
+    url: SITE_URL,
   },
 };
 

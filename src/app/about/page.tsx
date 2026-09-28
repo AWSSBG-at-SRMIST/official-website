@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
+import { pageMetadata, siteUrl } from "@/lib/seo";
 import { Cloud, Compass, Rocket, Globe2 } from "lucide-react";
 import { Footer } from "@/components/landing/Footer";
 import { CornerBrackets } from "@/components/ui/CornerBrackets";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/about",
   title: "About",
   description:
     "Learn about AWS Student Builder Group at SRMIST — the official student tech community at SRM KTR focused on AWS, AI, data engineering, and modern software. Our mission, vision, and why we exist.",
-  alternates: { canonical: "https://awssbg-srmist.in/about" },
-  openGraph: { url: "https://awssbg-srmist.in/about" },
-};
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://awssbg-srmist.in" },
-    { "@type": "ListItem", position: 2, name: "About", item: "https://awssbg-srmist.in/about" },
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl("/") },
+    { "@type": "ListItem", position: 2, name: "About", item: siteUrl("/about") },
   ],
 };
 

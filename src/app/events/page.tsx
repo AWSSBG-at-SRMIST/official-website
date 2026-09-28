@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import EventCard from "@/components/events/EventCard";
 import { Footer } from "@/components/landing/Footer";
 import { getPastEventEdges } from "@/lib/meetup";
 import { CalendarDays, Globe2, Link2 } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/events",
   title: "Events",
   description:
     "Past workshops, hackathons, and events from the AWS Student Builder Group at SRMIST.",
-  robots: { index: false, follow: false },
-};
+});
 
 // Meetup's API is unofficial/reverse-engineered and occasionally rejects a
 // request (401/503) even when the credentials are fine — ISR caching turned

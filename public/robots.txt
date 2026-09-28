@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://awssbg-srmist.in/sitemap.xml
+Sitemap: https://www.awssbg-srmist.in/sitemap.xml

@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Footer } from "@/components/landing/Footer";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/achievements",
   title: "Achievements",
-  description: "Achievements and milestones of the AWS Student Builder Group at SRMIST.",
-  robots: { index: false, follow: false },
-};
+  description:
+    "Achievements and milestones of the AWS Student Builder Group at SRMIST.",
+  noindex: true,
+});
 
 export default function AchievementsPage() {
   return (

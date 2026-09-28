@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import { ExternalLink, Star } from "lucide-react";
 import { Footer } from "@/components/landing/Footer";
 import { getOrgRepos } from "@/lib/github";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/projects",
   title: "Projects",
-  description: "Explore the open-source software built by the AWS Student Builder Group at SRMIST community.",
-};
+  description:
+    "Explore the open-source software built by the AWS Student Builder Group at SRMIST community.",
+});
 
 const LANGUAGE_COLORS: Record<string, string> = {
   TypeScript: "bg-blue-400",
