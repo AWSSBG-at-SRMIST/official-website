@@ -69,7 +69,10 @@ export function ContactPageClient() {
         </section>
 
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16">
+          {/* 5-column split from lg, matching the children's lg:col-span-2/3.
+              It used to start at md, so from 768 to 1023px each child took one
+              fifth: the form was squeezed into a narrow strip with 3/5 empty. */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-16">
 
             {/* Left — contact info */}
             <div className="lg:col-span-2 flex flex-col gap-8">
