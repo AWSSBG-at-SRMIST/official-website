@@ -1,11 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
 import { BrainOverlay } from "./BrainOverlay";
+import { GlobeAnimation } from "./GlobeAnimation";
 import Link from "next/link";
-
-const GlobeAnimation = dynamic(() => import("./GlobeAnimation").then((m) => ({ default: m.GlobeAnimation })), { ssr: false });
 
 const container = {
   hidden: {},

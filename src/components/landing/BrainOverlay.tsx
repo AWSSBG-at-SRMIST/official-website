@@ -32,14 +32,16 @@ function Neuron({ angle, length, delay }: { angle: number; length: number; delay
         animate={{ opacity: 0.55 }}
         transition={{ duration: 0.8, delay, ease: "easeOut" }}
       />
-      <motion.circle
+      {/* Endless pulse runs as a CSS animation (.neuron-dot in globals.css)
+          rather than a framer-motion loop, so it doesn't cost main-thread
+          work every frame. */}
+      <circle
         cx={x2}
         cy={y2}
         r={3}
         fill="currentColor"
-        initial={{ opacity: 0.3, scale: 0.8 }}
-        animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.4, 0.8] }}
-        transition={{ duration: 2.4, repeat: Infinity, delay: delay + 0.4, ease: "easeInOut" }}
+        className="neuron-dot"
+        style={{ animationDelay: `${delay + 0.4}s` }}
       />
     </>
   );
