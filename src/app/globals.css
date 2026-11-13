@@ -214,6 +214,25 @@ html {
   font-weight: 600;
 }
 
+/* Intro splash already shown this session (or reduced motion): hide it
+   before first paint. See INTRO_SEEN_SCRIPT in components/layout/Loader.tsx. */
+[data-intro-seen] .intro-loader {
+  display: none;
+}
+
+/* Pulsing dots at the ends of the hero brain's neurons (BrainOverlay). */
+@keyframes neuron-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+.neuron-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0.3;
+  animation: neuron-pulse 2.4s ease-in-out infinite both;
+}
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -226,6 +245,16 @@ html {
 @media (max-width: 768px) {
   .animate-marquee {
     animation-duration: 15s;
+  }
+}
+
+/* Visitors who ask their OS for less motion get still versions of the
+   endless animations. The globe and background grid check the same
+   setting in JS (GlobeAnimation, BackgroundNetwork). */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .neuron-dot {
+    animation: none;
   }
 }
 
